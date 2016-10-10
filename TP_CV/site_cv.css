@@ -1,0 +1,115 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22 sept. 2016, 21:26:05
+    Author     : EtRhI_PC
+*/
+
+.header{
+    text-align: center;
+    background-color: cornflowerblue;
+    border-right: 30px solid red;
+    margin-bottom: 0px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+}
+.header h1{
+    margin-bottom: 0px;
+}
+.header h2{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+nav{
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: cornflowerblue;
+    border-top: 15px solid red;
+}
+.ul_nav{
+    width : 200px;
+    list-style-type: none;
+}
+.ul_nav li a{
+    display: block;
+    color: black;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
+}
+.ul_nav li a.active{
+    border-left : 15px solid red;
+    border-bottom: 3px solid red;
+}
+.ul_nav li a:hover:not(.active){
+    border-right: 15px solid red;
+    border-top: 3px solid red;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+section a{
+    text-decoration: none;
+    color: black;
+}
+section{
+    text-align: center;
+}
+#EDT{
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    border : 3px solid black;
+}
+#EDT td {
+    border : 1px solid black;
+}
+#EDT th {
+    border : 1px solid black;
+}
+.anglais{
+    background-color : firebrick;
+}
+.reseau{
+    background-color: chartreuse;
+}
+.BD{
+    background-color: cornflowerblue;
+}
+.AL{
+    background-color : darkorchid;
+}
+.PL1{
+    background-color: yellow;
+}
+.systeme{
+    background-color: tomato;
+}
+.AI{
+    background-color: hotpink;
+}
+.LM{
+    background-color: aquamarine;
+}
+.GL{
+    background-color: silver;
+}
+#photovie td{
+    text-align: center;
+}
+#photovie{
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 2px;
+    overflow: auto;
+}

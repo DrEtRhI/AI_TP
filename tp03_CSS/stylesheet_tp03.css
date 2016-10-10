@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6 oct. 2016, 15:35:51
+    Author     : thierrye
+*/
+
+h1 {
+    text-align: center;
+    border : solid black medium;
+    padding : 0px;
+    width: 75%;
+    margin: auto;
+}
+
+section > h2 {
+    background-color: #cc00cc;
+    color: white;
+}
+
+p {
+    font-style: italic;
+    text-indent: 16px;
+}
+
+section > p{
+    font-style: initial;
+}
+
+section p:first-of-type::first-letter{
+    font-size: 2em;
+    color: red;
+}
+
+ol >li {
+    list-style-type: upper-roman;
+}
+
+ol> li > ol >li  {
+    list-style-type: lower-alpha;
+}
+
+ol> li > ol > li >ol >li {
+    list-style-type: lower-roman;
+    
+}
+
+section  ol {
+    background-color: lightgray; 
+    border-style: dashed;
+    margin-top: 40px; 
+    margin-left: 30px;  
+    padding-top: 15px;  
+    padding-bottom: 15px;
+    width:60%;
+}
+
+section ol ol {
+    width: inherit; 
+    border-style: none;  
+    margin: initial;  
+    padding-top: 0px; 
+    padding-bottom: 0px;
+}
+

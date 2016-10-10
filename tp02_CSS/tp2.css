@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22 sept. 2016, 16:14:00
+    Author     : thierrye
+*/
+body{
+    background-image: url("images/parchemin2.jpg");
+}
+h1{
+    text-align: center;
+}
+h2{
+    color: blue;
+    background-color: goldenrod;
+}
+p{
+    text-indent: 16px;
+    text-align: justify;
+}
+.surligne{
+    background-color: yellow;
+}
+span{
+    background-color: yellow;
+}
+#cadre1{
+    font-style: italic;
+    border: 3px solid black;
+}
+#cadre2{
+    border: 3px dashed black;
+    background-color: rgba(0,0,255,0.15);
+}
+p::first-letter{
+    color: red;
+    font-weight: bold;
+    font-size: 1.8em;
+}
