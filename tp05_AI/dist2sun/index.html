@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Plis</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            /**
+             * Affiche dans la page le nombre de plis qu'il faut effectuer pour obtenir une
+             * épaisseur supérieure à une distance donnée
+             * @param {String} distMess texte indiquant ce que représente la distance
+             * @param {number} dist la distance (en km)
+             */
+            function afficherDistance(distMess, dist) {
+                var n = calculerNbrePlis(dist);
+                document.write("Pour obtenir la distance " + distMess + "(" + dist +
+                        " km), il faut plier la feuille " + n + " fois");
+            }
+        </script>
+        <script src="scripts/pliages.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div>
+            <p>En supposant que l'épaisseur d'une feuille de papier est de 1/10 de mm,<p>
+            <p>
+                <script>
+            afficherDistance("Terre/Soleil", 149597870);
+                </script>
+            <p>
+            <p>Etonnant non ?</p>
+        </div>
+    </body>
+</html>
