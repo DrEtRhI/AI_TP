@@ -1,17 +1,34 @@
-function FtoC() {
+function dessinerEscalier() {
     
-    var operande2 = document.getElementById("op2").value;
-    var res;
-
-    res = ((5.0/9.0)*(operande2 - 32.0));
-    document.getElementById("op1").value = res;
+    var canvas = document.getElementById("dessinEscalier");
+    var ctx = canvas.getContext("2d");
+    var nbM = document.getElementById("nombremarche").value;
+    var H = document.getElementById("hauteur").value;
+    var posY, L, i;
+    
+    i = 0;
+    posY = 1;
+    L = H;
+    
+    while (i < nbM){
+        ctx.beginPath();
+        ctx.strokeStyle = "red";
+        ctx.fillStyle = "yellow";
+        ctx.rect(1, posY, L, H);
+        ctx.stroke();
+        ctx.fill();
+        
+        posY = parseInt(posY) + parseInt(H);
+        L = parseInt(L) + parseInt(H);
+        i = i + 1;
+    }
+    
 
 }
 
-function CtoF() {
-    var operande1 = document.getElementById("op1").value;
-    var res;
-
-    res = ((operande1 / (5.0/9.0))+ 32.0);
-    document.getElementById("op2").value = res;
+function effacerCanvas() {
+   var canvas = document.getElementById("dessinEscalier");
+   var ctx = canvas.getContext("2d");
+   
+   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }

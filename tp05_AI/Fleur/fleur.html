@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dessin d'un escalier</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="css/stylesTp5.css" rel="stylesheet" type="text/css"/>
+        <script src="js/fleur.js"></script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Dessines moi une fleur!!!</legend>
+            <div>
+                <span>nombre de pétales :</span>
+                <input type="text" id="nombrepetale" name="nbP" value="0" size="3" />
+            </div>           
+            <div>
+                <span>Longueur pétale :</span>		            
+                <input type="text" id="longueurpetale" name="longP" value="0" size="3" />
+            </div>
+            <div>
+            <div>
+                <span>Largeur pétale :</span>		            
+                <input type="text" id="largeurpetale" name="largP" value="0" size="3" />
+            </div>
+            <div>
+                <span>Couleur contour pétale :</span>		            
+                <input type="text" id="couleurligne" name="coulLign" value="" size="3" />
+            </div>
+            <div>
+                <span>Couleur pétale :</span>		            
+                <input type="text" id="couleurpetale" name="coulPetale" value="" size="3" />
+            </div>    
+                <button onclick="dessinerEscalier()">Dessiner</button>
+                <button onclick="effacerCanvas()">Effacer</button>
+            </div>
+            <canvas id="dessinPetale" width="800" height="800">
+            </canvas>        
+        </fieldset>
+    </body>
+</html>
