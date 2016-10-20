@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dessin d'un escalier</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="css/escalier_pyramide.css" rel="stylesheet" type="text/css"/>
+        <script src="js/escalier_pyramide.js"></script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Dessines moi un escalier !!!</legend>
+            <div>
+                <form>
+                    <input type="radio" name="escaliertype" value="escdroit" checked>
+                    <span> : Escalier droit</span>
+                    <input type="radio" name="escaliertype" value="escpyramide">
+                    <span> : Escalier pyramide</span>
+                </form>
+            </div>
+            <div>
+                <span>Hauteur de marche (en px) :</span>
+                <input type="text" id="hauteur" name="hauteurmarche" value="0" size="3" />
+            </div>           
+            <div>
+                <span>Nombre de marches :</span>		            
+                <input type="text" id="nombremarche" name="nbM" value="0" size="3" />
+            </div>
+            <div>
+                <input type="color" id="colorstroke" name="colstroke" value="#FFFFFF"/>
+                <span>: couleur contour</span>
+                <input type="color" id="colorfill" name="colfill" value="#000000"/>
+                <span>: couleur de fond</span>
+            </div>
+            <div>
+                <button onclick="dessinerEscalierDroit()">Dessiner</button>
+                <button onclick="effacerCanvas()">Effacer</button>
+            </div>
+            <canvas id="dessinEscalier" width="800" height="800">
+            </canvas>        
+        </fieldset>
+    </body>
+</html>
