@@ -12,14 +12,6 @@
         <fieldset>
             <legend>Dessines moi un escalier !!!</legend>
             <div>
-                <form>
-                    <input type="radio" name="escaliertype" value="escdroit" checked>
-                    <span> : Escalier droit</span>
-                    <input type="radio" name="escaliertype" value="escpyramide">
-                    <span> : Escalier pyramide</span>
-                </form>
-            </div>
-            <div>
                 <span>Hauteur de marche (en px) :</span>
                 <input type="text" id="hauteur" name="hauteurmarche" value="0" size="3" />
             </div>           
@@ -34,7 +26,15 @@
                 <span>: couleur de fond</span>
             </div>
             <div>
-                <button onclick="dessinerEscalierDroit()">Dessiner</button>
+                <form name="choixEscalier">
+                    <input type="radio" name="escaliertype" id="escdroit"  checked>
+                    <span> : Escalier droit</span>
+                    <input type="radio" name="escaliertype" id="escpyramide" >
+                    <span> : Escalier pyramide</span>
+                </form>
+            </div>
+            <div>
+                <button onclick="choixDessin()">Dessiner</button>
                 <button onclick="effacerCanvas()">Effacer</button>
             </div>
             <canvas id="dessinEscalier" width="800" height="800">
