@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Le Nombre Inconnu</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/nombreInconnu.js" ></script>
+        <link href="css/nombreInconnu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <h1>Le jeu du nombre inconnu !</h1>
+        <p>Bienvenu sur je du nombre inconnu.
+        La règle de ce jeu est très simple, un nombre aléatoire entre 0 et 100
+        est sélectionné par le programme. Vous avez 10 tentatives maximums pour
+        trouver le nombre inconnu. Si vous échouez en 10 tentatives le nombre
+        le nombre inconnu pour sera révélé. Une fois la partie terminée vous
+        aurez le choix de rejouer. Vous avez aussi le choix en cours de partie
+        d'abandonner si le besoin s'en fait ressentir !</p>
+        <h4>Bon jeu à vous ;-)</h4>
+        <form name="jeu" action="nombreInconnu">
+            <p>
+                <label>Votre proposition :</label>
+                <input id="choix" size="5"/>
+            </p>
+            <input type="submit" value="Valider Propositoin"/>
+        </form>
+    </body>
+</html>
