@@ -27,7 +27,7 @@ Anneau.prototype.dessiner = function (ctx) {
     ctx.fill();
 };
 
-function Tete(cap, xInit, yInit, rInit) {
+function Tete(xInit, yInit, rInit, cap) {
     this.cap = cap;
     this.xInit = xInit;
     this.yInit = yInit;
@@ -53,7 +53,7 @@ Tete.prototype.deplacerSelonCap = function () {
 
 Tete.prototype.CapOK = function (canvas) {
     var Bool = true;
-    if (((this.xInit + this.rInit < canvas.width)&&(this.xInit + this.rInit > 0)) && ((this.yInit + this.rInit < canvas.height)&&(this.yInit + this.rInit > 0))) {
+    if (((this.xInit + this.rInit > canvas.width)&&(this.xInit + this.rInit < 0)) && ((this.yInit + this.rInit > canvas.height)&&(this.yInit + this.rInit < 0))) {
         Bool = false;
     }
     return Bool;
@@ -62,7 +62,7 @@ Tete.prototype.CapOK = function (canvas) {
 function Chenille(canvas, nbAnneaux, r) {
     this.canvas = canvas;
     this.nbAnneaux = nbAnneaux;
-    this.Head = new Tete(0, canvas.width / 2, 495, r);
+    this.Head = new Tete(canvas.width / 2, canvas.height / 2, r, 0);
     this.Corps = new Array(nbAnneaux);
     for (var i = 0; i < nbAnneaux; i++) {
         this.Corps[i] = new Anneau((canvas.width / 2) - (r + (i * r)), canvas.height / 2, r);
