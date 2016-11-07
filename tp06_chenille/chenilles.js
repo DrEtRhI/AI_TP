@@ -53,7 +53,12 @@ Tete.prototype.deplacerSelonCap = function () {
 
 Tete.prototype.CapOK = function (canvas) {
     var Bool = true;
-    if (((this.xInit + this.rInit > canvas.width)&&(this.xInit + this.rInit < 0)) && ((this.yInit + this.rInit > canvas.height)&&(this.yInit + this.rInit < 0))) {
+    var newX = this.xInit + this.rInit * Math.cos(this.cap);
+    var newY = this.yInit + this.rInit * Math.sin(this.cap);
+    var R = this.rInit;
+    var W = canvas.width;
+    var H = canvas.height;
+    if (newX + R > W || newX - R < 0 || newY + R > H || newY - R < 0) {
         Bool = false;
     }
     return Bool;
@@ -80,13 +85,13 @@ Chenille.prototype.dessiner = function () {
 
 Chenille.prototype.deplacer = function () {
     for (var i = this.nbAnneaux - 1; i > 0; i--) {
-        this.Corps[i] = this.Corps[i - 1];
+        this.Corps[i].placerA(this.Corps[i - 1].xInit, this.Corps[i - 1].yInit);
     }
-    this.Corps[0] = this.Head;
-    var deviation = (Math.random() * 60) - 30;
+    this.Corps[0].placerA(this.Head.xInit, this.Head.yInit);
+    var deviation = (Math.random() * Math.PI / 3) - Math.PI / 6;
     this.Head.devierCap(deviation);
     while (this.Head.CapOK(this.canvas) === false) {
-        this.Head.devierCap(10);
+        this.Head.devierCap((Math.random() * Math.PI / 9) - Math.PI / 18);
     }
     this.Head.deplacerSelonCap();
 };
@@ -94,21 +99,35 @@ Chenille.prototype.deplacer = function () {
 function init() {
     var canvas = document.getElementById("zoneDessin");
     var ctx = canvas.getContext("2d");
-    Chenille1 = new Chenille(canvas, 10, 5);
-    Chenille1.dessiner();
-    Chenille1.deplacer();
+    
+    document.getElementById("butApply").onclick = function () {
+        document.getElementById("butStop").disabled = true;
+        document.getElementById("butStart").disabled = false;
+        document.getElementById("butApply").disabled = false;
+        var nbrAnneaux = document.getElementById("nbrAnneaux").value;
+        var lChenilles = document.getElementById("lChenilles").value;
+        nbrChenilles = document.getElementById("nbrChenilles").value;
+        Vers = new Array(parseInt(nbrChenilles));
+        for (var i = 0; i < nbrChenilles; i++ ){
+            Vers[i] = new Chenille(canvas, parseInt(nbrAnneaux), parseInt(lChenilles));
+        }
+    };
     document.getElementById("butStart").onclick = function () {
-        document.getElementById("butStop").disble = true;
-        document.getElementById("butStart").disable = false;
-        timerId = setInterval(function (){
+        document.getElementById("butStop").disabled = false;
+        document.getElementById("butStart").disabled = true;
+        document.getElementById("butApply").disabled = true;
+        timerId = setInterval(function () {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            Chenille1.deplacer();
-            Chenille1.dessiner();
+            for (var i = 0; i < nbrChenilles; i++){
+                Vers[i].deplacer();
+                Vers[i].dessiner();
+            }
         }, 100);
     };
     document.getElementById("butStop").onclick = function () {
-        document.getElementById("butStop").disable = false;
-        document.getElementById("butStart").disable = true;
+        document.getElementById("butStop").disabled = true;
+        document.getElementById("butStart").disabled = false;
+        document.getElementById("butApply").disabled = false;
         clearInterval(timerId);
     };
 }

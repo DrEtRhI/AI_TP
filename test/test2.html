@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+
+            
+    function Maitre(prenom, nom, age){
+        this.prenom = prenom;
+        this.nom = nom;
+        this.age = age;
+    }
+    
+    function Chien(nom, age, maitre, race, poids, passion) {
+                this.nom = nom;
+                this.age = age;
+                this.maitre = maitre;
+                this.race = race;
+                this.poids = poids;
+                this.passion = new Array(passion);
+            }
+            
+            Chien.prototype.maladie = "bonne santé";
+            Chien.prototype.aboyer = function (nb) {
+                for (var i = 0; i < nb; i++) {
+                    document.write(this.nom + " : WAUF WOUF <br/>");
+                }
+            };
+
+        </script>
+
+    </head>
+    <body>
+        <h1>Variable locale/variable globale</h1>
+        <script>
+            Eric = new Maitre("Eric","THIERRY",32);
+            Cindy = new Maitre("Cindy", "CAPRA", 25);
+            Eliot = new Chien("Eliot", 7, Cindy, "Terrier Brésilien", 6, ["puer de la gueule"]);
+            Jenna = new Chien("Jenna", 2, Eric, "Shiba Inu", 7, ["dormir", "manger", "jouer avec un baton!!"]);
+            Jenna.maladie;
+            document.write("Jenna maladie : " + Jenna.maladie + "<br/>");
+            Jenna.maladie = "patte cassée";
+            document.write("Jenna maladie : " + Jenna.maladie + "<br/>");
+
+            var prop;
+            for (prop in Jenna) {
+                document.write(Jenna[prop] + "<br/>");
+            }
+            var prop;
+            for (prop in Eliot) {
+                document.write(Eliot[prop] + "<br/>");
+            }
+            Jenna.aboyer(1);
+            Eliot.aboyer(2);
+            Eliot.aboyer = function(nb){
+              for(i = 0; i < nb; i++){
+                  document.write(this.nom + " : WEEF WEEF<br/>");
+              }  
+            };
+            Eliot.aboyer(5);
+            Jenna.aboyer(1);
+            date = new Date();
+            document.write(date + "<br/>");
+            tab = new Array("Coucou", "au revoir", 2 , 12, 2.2);
+            document.write(tab.sort()+"<br/>");
+            document.write(tab.push("petit nouveau")+"<br/>");
+            document.write(tab.reverse()+"<br/>");
+            document.write(tab.join(";")+"<br/>");
+            
+
+
+
+        </script>
+    </body>
+</html>

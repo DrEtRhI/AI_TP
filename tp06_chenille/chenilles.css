@@ -19,8 +19,18 @@ canvas {
     border: 1px solid black;
 
 }
+
 div {
-    width: 130px;
+    text-align: center;
+    
+}
+
+#div2{
+    margin-bottom: 10px;
+    text-align: center;
+}
+#button {
+    width: 189px;
     margin: auto;
     padding-bottom: 20px;
 }
