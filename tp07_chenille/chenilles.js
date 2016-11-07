@@ -27,6 +27,15 @@ Anneau.prototype.dessiner = function (ctx) {
     ctx.fill();
 };
 
+Anneau.prototype.changerCouleur = function (ctx) {
+    ctx.beginPath();
+    ctx.arc(this.xInit, this.yInit, this.rInit, 0, 2 * Math.PI);
+    ctx.strokeStyle = "red";
+    ctx.fillStyle = "red";
+    ctx.stroke();
+    ctx.fill();
+};
+
 function Tete(xInit, yInit, rInit, cap) {
     this.cap = cap;
     this.xInit = xInit;
@@ -39,6 +48,15 @@ Tete.prototype.dessiner = function (ctx) {
     ctx.arc(this.xInit, this.yInit, this.rInit, 0, 2 * Math.PI);
     ctx.strokeStyle = "blue";
     ctx.fillStyle = "black";
+    ctx.stroke();
+    ctx.fill();
+};
+
+Tete.prototype.changerCouleur = function (ctx) {
+    ctx.beginPath();
+    ctx.arc(this.xInit, this.yInit, this.rInit, 0, 2 * Math.PI);
+    ctx.strokeStyle = "red";
+    ctx.fillStyle = "red";
     ctx.stroke();
     ctx.fill();
 };
@@ -83,6 +101,15 @@ Chenille.prototype.dessiner = function () {
 
 };
 
+Chenille.prototype.changerCouleur = function () {
+    ctx = this.canvas.getContext("2d");
+    this.Head.changerCouleur(ctx);
+    for (var i = 0; i < this.nbAnneaux; i++) {
+        this.Corps[i].changerCouleur(ctx);
+    }
+
+};
+
 Chenille.prototype.deplacer = function () {
     for (var i = this.nbAnneaux - 1; i > 0; i--) {
         this.Corps[i].placerA(this.Corps[i - 1].xInit, this.Corps[i - 1].yInit);
@@ -104,6 +131,7 @@ function init() {
         document.getElementById("butStop").disabled = true;
         document.getElementById("butStart").disabled = false;
         document.getElementById("butApply").disabled = false;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         var nbrAnneaux = document.getElementById("nbrAnneaux").value;
         var lChenilles = document.getElementById("lChenilles").value;
         nbrChenilles = document.getElementById("nbrChenilles").value;
@@ -117,8 +145,9 @@ function init() {
         document.getElementById("butStart").disabled = true;
         document.getElementById("butApply").disabled = true;
         timerId = setInterval(function () {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            //ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (var i = 0; i < nbrChenilles; i++){
+                Vers[i].changerCouleur();
                 Vers[i].deplacer();
                 Vers[i].dessiner();
             }
