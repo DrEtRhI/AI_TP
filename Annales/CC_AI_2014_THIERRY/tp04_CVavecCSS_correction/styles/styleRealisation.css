@@ -1,0 +1,54 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 19, 2016, 11:04:14 PM
+    Author     : etrhi
+*/
+@import url('stylesCommuns.css');
+
+#contenu h1 {
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+    background-color: blue;
+}
+
+#commentaire {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.projet {
+    display: flex;
+    justify-content: space-between;
+    width: 780px;
+    padding: 10px;
+    background-color: lightblue;
+    margin-bottom: 20px;
+}
+.projet > * {
+    vertical-align: top;
+}
+
+.description ul {
+    list-style-position: inside;
+    text-indent: 10px;
+}
+
+.description {
+    width: 400px;
+    display: inline-block;
+}
+
+.imageCommentaire{
+    width: 280px;
+    display: inline-block;   
+}
+
+.imageCommentaire p {
+    font-style: italic;
+    text-align: center;
+}

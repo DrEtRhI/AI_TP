@@ -1,0 +1,93 @@
+/* 
+    Created on : 8 oct. 2016, 14:50:43
+    Author     : genoud
+*/
+@import url('stylesCommuns.css');
+
+/*-------------------------------------------------
+  styles pour le tableau identifié par "agenda"
+---------------------------------------------------*/
+
+#agenda{
+    border-collapse:collapse;
+    text-align: center;
+    width: 100%;
+}
+
+#agenda th , #agenda td
+{
+    border:1px solid black; /* pour que les cases du tableau aient en bordure 
+                            un trait noir d'épaisseur 1px */
+}
+
+#agenda thead {  /* la ligne d'en-tête */
+    background-color:#3399FF;
+    font-weight: bold;
+    color: white;
+}
+
+#agenda tbody {
+    background-color:#CCFFFF;
+}
+
+#agenda td {
+    width:16.6%; /* pour avoir de colonnes de largeur égale */
+    height:50px;
+}
+
+/* 
+  classes de styles pour colorer les cases du tableau de l'emploi du
+  temps et les cases du tableau correspondant à la légende
+ */
+.anglais {
+	background-color:#FF9966;
+}
+
+.bd {
+	background-color:#FFCCFF;
+}
+.prog {
+	background-color:#99FF99;
+}
+
+.algo {
+	background-color:#FFFF66;
+}
+
+.sport {
+	background-color:#33CC33;
+}
+
+.reseaux {
+	background-color:#6666FF;
+}
+
+.gl {
+	background-color:#FF66CC;
+}
+.syst {
+	background-color:#D14719;
+}
+
+.web {
+	background-color:#009900;
+}
+
+#separateur td {  /* pour la ligne séparant le matin de l'après midi */
+	background-color:#E6E6E6;
+        height: 10px;
+}
+
+/*
+les styles pour le tableau matérialsiant la légende
+*/
+
+#legende {
+   margin-top:20px;
+}
+
+#legende  td:nth-child(odd) {  /* les éléménts td de rang impair (1,3 ,5, 7 ...) */
+   width: 25px;
+   height:25px;
+   border: 1px solid black;
+}

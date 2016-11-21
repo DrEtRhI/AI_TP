@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 nov. 2016, 19:16:51
+    Author     : EtRhI_PC
+*/
+
+
+.intro header {
+    background-image: url("image_index/banner1.png");
+    background-repeat: no-repeat;
+    background-size : cover;
+}
+
+header h1, header h2 {
+    margin-left: 50%;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 300%;
+    padding-top: 50px;
+}
+
+header h2 {
+    font-size: 220%;
+    padding-bottom: 50px;
+}
+
+#zen-supporting {
+    margin-left : 3%;
+    text-align: justify;
+    width : 75%;
+    text-justify: auto;
+    float: left;
+}
+
+aside[role=complementary]{
+    width : 20%;
+    float: right;
+}
+
+footer {
+    display: initial;
+    text-align: center;
+}

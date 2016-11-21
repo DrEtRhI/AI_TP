@@ -12,6 +12,23 @@ p {
     width: 500px;
     text-align: justify; 
 }
-div {
-    margin-top: 20px;
+#victoire {
+    color : green;
+    font-weight: bolder;
+}
+
+input {
+    margin-top: 10px;
+}
+
+#abandon {
+    color : red;
+    font-weight: bolder;
+}
+
+#texte {
+    margin-bottom: 10px;
+}
+span {
+    font-weight: bolder;
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+   <head>
+      <title>Tortue LOGO</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="tortue.css" rel="stylesheet" type="text/css"/>
+      <script src="tortue.js" type="text/javascript"></script>
+   </head>
+   <body onload="init()">
+      <h1>Dessinez avec la tortue LOGO</h1>
+      <div>
+         <button id="reset">Reset</button><button id="avancer">Avancer</button>
+         <button id="tournerG">Tourner G</button><button id="tournerD">Tourner D</button>
+         <button id="positionEcriture"></button>
+      </div>
+      <div>
+         distance : <input type="text" id="longueur" size="2"/> angle de rotation : <input type="text" id="angle" size="2"/>
+      </div>
+      <div>
+         <button id="allerA">Aller A</button> x:<input type="text" id="posX" size="2"/> y:<input type="text" id="posY" size="2"/> cap:<input type="text" id="angleCap" size="2"/>
+      </div>
+      <div id="infoTortue"></div>
+      <canvas width="500" height="500" id="canvasTortue">Votre navigateur ne supporte pas la balise canvas</canvas>
+   </body>
+</html>
