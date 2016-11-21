@@ -9,10 +9,10 @@ and open the template in the editor.
         <title>Le Nombre Inconnu</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="js/nombreInconnu.js" ></script>
+        <script src="js/test.js" type="text/javascript"></script>
         <link href="css/nombreInconnu.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body onload="init()">
+    <body>
         <h1>Le jeu du nombre inconnu !</h1>
         <p>Bienvenu sur je du nombre inconnu.
         La règle de ce jeu est très simple, un nombre aléatoire entre 0 et 100
@@ -22,18 +22,8 @@ and open the template in the editor.
         aurez le choix de rejouer. Vous avez aussi le choix en cours de partie
         d'abandonner si le besoin s'en fait ressentir !</p>
         <h4>Bon jeu à vous ;-)</h4>
-            <p id="champInput">
-                <label>Votre proposition :</label>
-                <input id="choix" size="5"/>
-            </p>
-            <div id="test"></div>
-            <div id="texte"></div>
-            <div id="juste"></div>
-            <div id="abandon"></div>
-            <div id="defaite"></div>
-            <div id="victoire"></div>
-            <input type="button" value="Valider Proposition" id="validerBut"/>
-            <input type="button" value="Abandonner" id="abandonBut"/>
-            <input type="button" value="Rejouer" id="rejouerBut"/>
+        <script>
+            init();
+        </script>
     </body>
 </html>

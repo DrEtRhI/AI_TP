@@ -7,8 +7,15 @@
 function init() {
     compteur = 0;
     nombre = getRandomIntInclusive(0, 100);
-    document.getElementById("rejouerBut").style.visibility = 'hidden';
-
+    document.write('<div>');
+    document.write('<label>Votre proposition :</label>');
+    document.write('<input id="choix" size="5"/>');
+    document.write('</div>');
+    document.write('<div>');
+    document.write('<input type="button" value="Valider Proposition" id="validerBut"/>');
+    document.write('<input type="button" value="Abandonner" id="abandonBut"/>');
+    document.write('</div>');
+    
     document.getElementById("validerBut").onclick = function () {
         choix = document.getElementById("choix").value;
         nombreInconnu(parseInt(choix));
@@ -73,3 +80,15 @@ function init() {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 }
+/*<p id="champInput">
+                <label>Votre proposition :</label>
+                <input id="choix" size="5"/>
+            </p>
+            <div id="test"></div>
+            <div id="texte"></div>
+            <div id="juste"></div>
+            <div id="abandon"></div>
+            <div id="defaite"></div>
+            <div id="victoire"></div>
+            
+            <input type="button" value="Rejouer" id="rejouerBut"/>*/
