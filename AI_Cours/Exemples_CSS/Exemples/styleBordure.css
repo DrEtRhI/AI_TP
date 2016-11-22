@@ -1,0 +1,59 @@
+div
+{
+   background-color : #99ffff;
+   width : 10em ;
+   height : 10em ;
+   margin : 2em;
+   float: left;
+   border-width: 6px;
+}
+
+#dotted
+{
+   border-style: dotted;
+}
+
+#dashed
+{
+   border-style: dashed;
+}
+
+#double
+{
+   border-style: double;
+}
+
+#groove
+{
+   border-style: groove;
+}
+
+#hidden
+{
+   border-style: hidden;
+}
+
+#inset
+{
+   border-style: inset;
+}
+
+#none
+{
+   border-style: none;
+}
+
+#outset
+{
+   border-style: outset;
+}
+
+#ridge
+{
+   border-style: ridge;
+}
+
+#solid
+{
+   border-style: solid;
+}

@@ -1,0 +1,12 @@
+#pere
+{
+  background-color : aqua;
+  width : 400px ;
+  height : 300px ;
+}
+
+#pere div
+{
+  border-style : solid;
+  border-width: 2px;
+ }

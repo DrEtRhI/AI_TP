@@ -1,0 +1,33 @@
+p {
+margin: 0;
+}
+
+#conteneur
+{
+   background-color : aqua;
+   width: 400px;
+   position: relative; 
+}
+
+#boite1
+{
+   background-color : #ffcccc;
+   width : 10em ;
+   margin-left: 3em;  
+}
+
+#boite2
+{
+   background-color: lime;
+   width: 15em;
+   position: absolute;
+   left: 0px;
+   top: 0px;
+}
+
+#boite3
+{
+   background-color: #ffcc66;
+   margin-left: 3em;
+   width: 10em
+}

@@ -1,0 +1,18 @@
+.resume
+{
+  font-style: italic; 
+  font-size : 0.7em ;
+  text-align: justify;
+  padding-left: 3em;
+  padding-right: 3em ;
+}
+
+.renforce
+{
+   color: red
+}
+
+a.renforce
+{
+  font-style: oblique;
+}

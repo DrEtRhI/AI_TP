@@ -1,0 +1,25 @@
+div
+{
+   background-color : aqua;
+   width: 100px;
+   height: 100px;
+   margin: 2em;
+   float: left;  
+   background-image : url(fond.gif) ;
+   background-repeat : no-repeat;
+}
+
+#div1
+{
+  
+}
+
+#div2
+{
+  background-position : center bottom ;
+}
+
+#div3
+{
+  background-position : 25% 75% ;
+}

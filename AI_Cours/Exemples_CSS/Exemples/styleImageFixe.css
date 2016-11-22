@@ -1,0 +1,11 @@
+h1{
+   text-align : center;
+}
+
+body
+{
+   background-image : url(logo.gif) ;
+   background-repeat : no-repeat;
+   background-attachment: fixed;
+   background-position : center center ;
+}

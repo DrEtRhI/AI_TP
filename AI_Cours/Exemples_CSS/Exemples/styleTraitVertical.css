@@ -1,0 +1,12 @@
+p
+{
+  text-align: justify;
+}
+
+.question
+{
+  border-left-style : solid ;
+  border-left-width : 3px ;
+  margin-left : 3em ;
+  padding-left : 1em ;
+}
