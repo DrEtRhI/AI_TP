@@ -32,21 +32,46 @@ function cible(ctx, x, y, rExterne, rInterne, nbCercles) {
     ctx.restore();
 }
 
-function pavageCible(canvas, newrIntern, newnbCercles) {
+/**
+ * 
+ * @param {type} canvas : canvas dans lequel la fonction pavageCible s'applique
+ * @param {type} nbCibles : nbCibles par lignes
+ * @param {type} rInterne : rayons du centre de la cible
+ * @param {type} nbCercles : nbCercles qui constituent la cible
+ * @param {type} mode : true pavage standard, false pavage altern�
+ * @returns {undefined}
+ */
+function pavageCible(canvas, nbCibles, rInterne, nbCercles, mode) {
     var ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    this.newnbCercles = newnbCercles;
-    this.newrIntern = newrIntern;
-    for (var j = (this.newrIntern * this.newnbCercles); j < canvas.height; j++) {
-        for (var i = (this.newrIntern * this.newnbCercles); i < canvas.width; i++) {
-            var x = this.newrIntern * this.newnbCercles;
-            var y = this.newrIntern * this.newnbCercles;
-            var rExterne = canvas.width / (this.newrIntern * this.newnbCercles);
-            var cible1 = new cible(ctx, x, y, rExterne, this.newrIntern, this.newnbCercles);
+    var rExterne = (canvas.width / nbCibles) / 2;
+    var xInit = rExterne;
+    var yInit = rExterne;
+    var i, j;
+    if (mode === true) {
+        for (i = 0; i < nbCibles; i++) {
+            for (j = 0; j < nbCibles; j++) {
+                cible(ctx, xInit, yInit, rExterne, rInterne, nbCercles);
+                xInit = xInit + rExterne * 2;
+            }
+            xInit = rExterne;
+            yInit = yInit + rExterne * 2;
+        }
+    } else {
+        for (i = 0; i < nbCibles; i++) {
+            for (j = 0; j < nbCibles; j++) {
+                cible(ctx, xInit, yInit, rExterne, rInterne, nbCercles);
+                xInit = xInit + rExterne * 4;
+            }
+            if ((i + 1) % 2 !== 0) {
+                xInit = rExterne * 3;
+            } else {
+                xInit = rExterne;
+            }
+            yInit = yInit + rExterne * 2;
         }
     }
-
-};
+}
 
 
 /**
@@ -57,23 +82,36 @@ function pavageCible(canvas, newrIntern, newnbCercles) {
 function init() {
     var canvas1 = document.getElementById("canvas1");
     var ctx1 = canvas1.getContext("2d");
-    var canvas2 = document.getElementById("canvas2");
-    var ctx2 = canvas2.getContext("2d");
     // dessine 3 cibles dans le canvas1
     // à faire Q1
-    var cible1 = new cible(ctx1, 100, 150, 75, 10, 5);
-    var cible2 = new cible(ctx1, 325, 150, 125, 10, 8);
-    var cible3 = new cible(ctx1, 625, 150, 150, 10, 15);
+    cible(ctx1, 100, 150, 75, 10, 5);
+    cible(ctx1, 325, 150, 125, 10, 8);
+    cible(ctx1, 625, 150, 150, 10, 15);
+
     // pavage dans le canvas2
     // à faire Q2
-    //pavageCible(canvas2, 5, 7);
+    var canvas2 = document.getElementById("canvas2");
+    pavageCible(canvas2, 5, 5, 7, true);
+
 
     // pavage alterné dans le canvas3
     // à faire Q3
-
+    var canvas3 = document.getElementById("canvas3");
+    pavageCible(canvas3, 5, 5, 7, false);
     // pavage dans le canvas4 contrôlé par un slider et des radio boutons
     // à faire Q4
+    var canvas4 = document.getElementById("canvas4");
 
+    document.getElementById("nbreCibles").ondrag = function () {
+        var modeComplet = document.getElementById("complet").checked;
+        //var modeAlterne = document.getElementById("alterne").checked;
+        var nbCibles = parseInt(document.getElementById("nbreCiblesValue").value);
+        if (modeComplet === true) {
+            pavageCible(canvas4, nbCibles, 5, 7, modeComplet);
+        } else {
+            pavageCible(canvas4, nbCibles, 5, 7, modeComplet);
+        }
+    };
 }
 
 
