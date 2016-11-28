@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cibles</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                text-align: justify;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size: 0.8em;
+            }
+            canvas { 
+                border:1px solid;
+                background-color: white;
+            }
+            #wrapper {
+                width: 820px;
+                margin:auto;
+            }
+            .centré {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body onload="init()">
+        <div id="wrapper">
+            <h1>Dessiner des cibles</h1>
+            <p>Cette page présente l'utilisation d'une fonction javascript permettant de dessiner des cibles</p>
+            <h2>Exemple 1</h2>
+            <p>
+                Dans le canvas ci-dessous, trois cible sont dessinées.
+            </p>
+            <ul>
+                <li>
+                    cible 1:  centre (x:100, y:150), rayon externe 75, rayon interne 10, nombre de cercles 5
+                </li>
+                <li>
+                    cible 2:  centre (x:325, y:150), rayon externe 125, rayon interne 10, nombre de cercles 8
+                </li>
+                <li>
+                    cible 3:  centre (x:625, y:150), rayon externe 150, rayon interne 10, nombre de cercles 15
+                </li>
+            </ul>
+            <div class="centré">
+                <canvas  id="canvas1" width="800" height ="300">
+                    le canvas où seront dessinées 3 cibles
+                </canvas>
+            </div>
+            <h2>Exemple 2</h2>
+            <p>Dans les deux canvas ci-dessous, deux pavages de cibles sont effectués.</p>
+            <ul>
+                <li>Dans le canvas de gauche, un pavage complet avec 5 cibles par ligne, chaque cible ayant un rayon interne de 5 pixel et un nombre de cercles de 7.</li>
+                <li>Dans le canvas de droite, le même pavage mais alterné (une cible sur deux est dessinée).</li>
+            </ul>
+            <div class='centré'>
+                <canvas  id="canvas2" width="400" height ="400">
+                    le canvas où est dessiné un pavage de 5 cibles
+                </canvas>
+                <canvas  id="canvas3" width="400" height ="400">
+                    le canvas où est dessiné un pavage de 5 cibles
+                </canvas>
+            </div>
+            <h2>Exemple 3</h2>
+            <p>
+                Dans le canvas ci-dessous, un pavage de cible est effectué, il est contrôlé interactivement par un "slider" qui permet
+                de modifier le nombre de cibles par lignes et un radio bouton qui permet de choisir si l'affichage est un pavage complet
+                ou un pavage alterné.
+            </p>
+            <div class='centré'>
+                <p>
+                    Nombre de cibles par ligne :<span id="nbreCiblesValue">5</span>
+                </p>
+                <input type="range" id="nbreCibles" min="2" max="10" step="1" value="5" oninput="updateValue()"/>
+                <p>
+                    Pavage complet <input type="radio" id="complet" name="typePavage" checked>
+                    <input type="radio" id="alterne" name="typePavage"> Pavage alterné
+                </p>
+
+                <canvas  id="canvas4" width="400" height ="400">
+                    le canvas où est dessiné le pavage de cibles
+                </canvas>
+            </div>
+        </div>
+        <script src="js/cible.js"></script>
+        <script>
+        function updateValue() {  // pour mettre à jour le nombre de cible lorsque le slider est déplacé
+            var x = document.getElementById("nbreCibles").value;
+            document.getElementById("nbreCiblesValue").innerHTML = x;
+        }
+        </script>
+    </body>
+</html>    
+
+
